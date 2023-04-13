@@ -11,7 +11,7 @@ import json
 import os
 
 #send http request
-def call_object_detection_service( image):
+def call_object_detection_service(image):
     try:
 
         url = str(sys.argv[2])
