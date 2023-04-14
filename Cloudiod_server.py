@@ -130,14 +130,7 @@ def do_prediction(image,net,LABELS):
 
 yolo_path  = "yolo_tiny_configs/"
 
-## Yolov3-tiny versrion
-labelsPath= "coco.names"
-cfgpath= "yolov3-tiny.cfg"
-wpath= "yolov3-tiny.weights"
 
-Lables=get_labels(labelsPath)
-CFG=get_config(cfgpath)
-Weights=get_weights(wpath)
 
 
 @app.route('/cloudiod-api', methods=['POST'])
@@ -170,4 +163,13 @@ def process():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    ## Yolov3-tiny versrion
+    labelsPath = "coco.names"
+    cfgpath = "yolov3-tiny.cfg"
+    wpath = "yolov3-tiny.weights"
+
+    Lables = get_labels(labelsPath)
+    CFG = get_config(cfgpath)
+    Weights = get_weights(wpath)
+
+    app.run(debug=True, threaded=True)
