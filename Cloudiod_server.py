@@ -135,6 +135,7 @@ yolo_path  = "yolo_tiny_configs/"
 
 @app.route('/cloudiod-api', methods=['POST'])
 def process():
+    #obtain request body
     data = json.loads(request.data)
     json_data = json.loads(data)
     decoded_image = base64.b64decode(json_data['image'])
